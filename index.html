@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: Helvetica, Arial, sans-serif;
+            cursor: pointer;
+        }
+        
+        #theme-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is the main page</h1>
+    <button onclick="generateTheme()">generate theme</button>
+    <div id="theme-result"></div>
+    
+    <script>
+        const themes = [
+            "Aurora",
+            "Midnight",
+            "Ocean",
+            "Forest",
+            "Sunset",
+            "Mountain",
+            "Desert",
+            "Storm",
+            "Glacier",
+            "Meadow"
+        ];
+        
+        function generateTheme() {
+            const randomIndex = Math.floor(Math.random() * themes.length);
+            const selectedTheme = themes[randomIndex];
+            document.getElementById('theme-result').textContent = selectedTheme;
+        }
+    </script>
+</body>
+</html>
