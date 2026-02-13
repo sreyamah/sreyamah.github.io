@@ -64,6 +64,7 @@
     <div id="theme-result"></div>
     
     <script>
+        // master themes pool
         const themes = [
             "yung lean lookalike contest",
             "ur fav font",
@@ -80,11 +81,19 @@
             "wear this color: #ASS420",
             "david cronenberg's crash [1996]",
             "the intersection of art and technology",
+            "monky",
         ];
+
+        // shuffled themes pool
+        var randomThemes = [];
         
         function generateTheme() {
-            const randomIndex = Math.floor(Math.random() * themes.length);
-            const selectedTheme = themes[randomIndex];
+            // refill and shuffle themes if empty
+            if (randomThemes.length === 0) {
+                randomThemes = [...themes.sort(() => 0.5 - Math.random())]
+            }
+            
+            const selectedTheme = randomThemes.pop(0);
             document.getElementById('theme-result').textContent = selectedTheme;
         }
     </script>
